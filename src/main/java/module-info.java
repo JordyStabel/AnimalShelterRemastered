@@ -1,5 +1,7 @@
 module AnimalShelter {
     requires javafx.controls;
+    requires javafx.fxml;
 
-    exports openjfx;
+    opens ui;
+    exports ui;
 }
