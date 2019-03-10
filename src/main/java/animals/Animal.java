@@ -2,10 +2,11 @@ package animals;
 
 import enums.Gender;
 import other.Reservor;
+import shop.ISellable;
 
 import java.util.Date;
 
-public class Animal {
+public abstract class Animal implements ISellable {
 
     private String name;
     private Gender gender;
