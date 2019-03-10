@@ -1,5 +1,6 @@
 package animals;
 
+import enums.Category;
 import enums.Gender;
 
 import java.util.Date;
@@ -9,10 +10,10 @@ public class Dog extends Animal {
 
     private static int dogCount = 0;
     private Date lastWalk;
-    public boolean needsWalk;
+    private boolean needsWalk;
 
     public Dog(String name, Gender gender) {
-        super(name, gender);
+        super(name, gender, Category.DOG);
         this.lastWalk = new Date();
     }
 
@@ -34,7 +35,7 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", last walk: %s", this.lastWalk);
+        return super.toString() + ", €" + getPrice() + String.format(", last walk: %s", this.lastWalk);
     }
 
     @Override

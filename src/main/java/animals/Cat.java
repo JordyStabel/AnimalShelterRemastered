@@ -1,5 +1,6 @@
 package animals;
 
+import enums.Category;
 import enums.Gender;
 
 public class Cat extends Animal {
@@ -7,7 +8,7 @@ public class Cat extends Animal {
     private String badHabits;
 
     public Cat(String name, Gender gender, String badHabits) {
-        super(name, gender);
+        super(name, gender, Category.CAT);
         this.badHabits = badHabits;
     }
 
@@ -28,6 +29,6 @@ public class Cat extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", bad habits %s", this.badHabits.toLowerCase());
+        return super.toString() + ", €" + getPrice() + String.format(", bad habits %s", this.badHabits.toLowerCase());
     }
 }

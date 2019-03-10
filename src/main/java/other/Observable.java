@@ -18,7 +18,7 @@ public class Observable {
     }
 
     /** Loop through all observers and update them */
-    private void notifyObservers(Object object){
+    public void notifyObservers(Object object){
         for (Observer observer : observers){
             observer.update(object);
         }

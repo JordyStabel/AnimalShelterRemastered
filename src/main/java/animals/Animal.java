@@ -1,8 +1,10 @@
 package animals;
 
+import enums.Category;
 import enums.Gender;
 import other.Reservor;
 import shop.ISellable;
+import shop.Item;
 
 import java.util.Date;
 
@@ -11,10 +13,12 @@ public abstract class Animal implements ISellable {
     private String name;
     private Gender gender;
     private Reservor reservedBy;
+    private Category category;
 
-    public Animal(String name, Gender gender){
+    public Animal(String name, Gender gender, Category category){
         this.name = name;
         this.gender = gender;
+        this.category = category;
     }
 
     public boolean reserve(String reservedBy){
@@ -56,5 +60,13 @@ public abstract class Animal implements ISellable {
 
     private void setReservedBy(Reservor reservedBy) {
         this.reservedBy = reservedBy;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

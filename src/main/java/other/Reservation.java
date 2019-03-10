@@ -8,15 +8,23 @@ import enums.Gender;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reservation {
+public class Reservation extends Observable{
 
-    public List<Animal> animals = new ArrayList<Animal>();
+    private List<Animal> animals = new ArrayList<Animal>();
 
-    public void NewCat(String name, Gender gender, String badHabits){
-        this.animals.add(new Cat(name, gender, badHabits));
+    public List<Animal> getAllAnimals() {
+        return animals;
     }
 
-    public void NewDog(String name, Gender gender){
-        this.animals.add(new Dog(name, gender));
+    public void newCat(String name, Gender gender, String badHabits){
+        Cat cat = new Cat(name, gender, badHabits);
+        this.animals.add(cat);
+        notifyObservers(cat);
+    }
+
+    public void newDog(String name, Gender gender){
+        Dog dog = new Dog(name, gender);
+        this.animals.add(dog);
+        notifyObservers(dog);
     }
 }
