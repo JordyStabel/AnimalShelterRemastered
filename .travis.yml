@@ -4,7 +4,6 @@ rvm:
   - 11.0
   - junit
 
-# whitelist
 branches:
   only:
     - master
