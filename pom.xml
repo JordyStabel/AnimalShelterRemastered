@@ -48,32 +48,15 @@
 
     <build>
         <plugins>
+            <!-- Java compiler - Java version 11 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>${codeVersion}</release>
-                    <source>${codeVersion}</source>
-                    <target>${codeVersion}</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>1.0.3</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.0.3</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!-- Java Code Coverage with JaCoCo plugin for maven -->
@@ -81,6 +64,24 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.3</version>
+                <configuration>
+                    <excludes>
+                        <!-- Exclude model classes (POJO's) -->
+                        <exclude>**/Animal.java</exclude>
+                        <exclude>**/Gender.java</exclude>
+                        <exclude>**/ISellable.java</exclude>
+                        <exclude>**/Observable.java</exclude>
+                        <exclude>**/Observer.java</exclude>
+                        <exclude>**/Product.java</exclude>
+                        <exclude>**/Reservor.java</exclude>
+                        <exclude>**/Thing.java</exclude>
+                        <exclude>**/Main.java</exclude>
+                        <exclude>**/SceneController.java</exclude>
+                        <exclude>**/Reservations.java</exclude>
+                        <exclude>**/WebShop.java</exclude>
+                    </excludes>
+                </configuration>
+
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
@@ -96,6 +97,23 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <!-- latest version (2.20.1) does not work well with JUnit5 -->
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.0.3</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.0.3</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
