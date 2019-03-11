@@ -1,10 +1,19 @@
 language: java
 
-rvm:
-  - 11.0
-  - junit
+sudo: false
+install: mvn install
+dist: trusty
 
-branches:
-  only:
-    - master
-    - dev
+jdk:
+  -oraclejdk11
+
+matrix:
+  include:
+    - env: JDK='Oracle JDK 11'
+    - install: . ./install-jdk.sh -F 11 -L BCL
+
+script:
+  - mvn test -B
+  - echo PATH = ${PATH}
+  - echo JAVA_HOME = ${JAVA_HOME}
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
