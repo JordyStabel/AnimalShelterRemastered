@@ -64,23 +64,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.3</version>
-                <configuration>
-                    <excludes>
-                        <!-- Exclude model classes (POJO's) -->
-                        <exclude>**/Animal.java</exclude>
-                        <exclude>**/Gender.java</exclude>
-                        <exclude>**/ISellable.java</exclude>
-                        <exclude>**/Observable.java</exclude>
-                        <exclude>**/Observer.java</exclude>
-                        <exclude>**/Product.java</exclude>
-                        <exclude>**/Reservor.java</exclude>
-                        <exclude>**/Thing.java</exclude>
-                        <exclude>**/Main.java</exclude>
-                        <exclude>**/SceneController.java</exclude>
-                        <exclude>**/Reservations.java</exclude>
-                        <exclude>**/WebShop.java</exclude>
-                    </excludes>
-                </configuration>
 
                 <executions>
                     <execution>
