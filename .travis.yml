@@ -25,3 +25,4 @@ script:
   - mvn test -B
   - echo PATH = ${PATH}
   - echo JAVA_HOME = ${JAVA_HOME}
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
