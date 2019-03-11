@@ -4,6 +4,12 @@ sudo: false
 install: mvn install
 dist: trusty
 
+addons:
+  sonarcloud:
+    organization: "jordystabel-github" # the key of the org you chose at step #3
+    token:
+      secure: 79c57571d3181dd4e43a97afe897928d51550556 # encrypted value of your token
+
 jdk:
   -oraclejdk11
 
@@ -19,3 +25,4 @@ script:
   - mvn test -B
   - echo PATH = ${PATH}
   - echo JAVA_HOME = ${JAVA_HOME}
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
