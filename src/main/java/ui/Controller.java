@@ -71,10 +71,10 @@ public class Controller implements Initializable {
     private void addNewItem() {
         switch (category_CB.getValue()) {
             case CAT:
-                reservations.newCat(name_TF.getText(), male_RB.isSelected() ? Gender.Male : Gender.Female, badHabits_TA.getText());
+                reservations.newCat(name_TF.getText(), male_RB.isSelected() ? Gender.Male : Gender.Female, badHabits_TA.getText(), 0.0);
                 break;
             case DOG:
-                reservations.newDog(name_TF.getText(), male_RB.isSelected() ? Gender.Male : Gender.Female);
+                reservations.newDog(name_TF.getText(), male_RB.isSelected() ? Gender.Male : Gender.Female, 0.0);
                 break;
             case ITEM:
                 shop.addNewItem(name_TF.getText(), Double.parseDouble(price_TF.getText()));

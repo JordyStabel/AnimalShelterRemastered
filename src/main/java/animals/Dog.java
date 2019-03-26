@@ -3,17 +3,20 @@ package animals;
 import enums.Category;
 import enums.Gender;
 
+import javax.persistence.Entity;
 import java.util.Date;
 
-
+@Entity
 public class Dog extends Animal {
 
     private static int dogCount = 0;
     private Date lastWalk;
     private boolean needsWalk;
 
-    public Dog(String name, Gender gender) {
-        super(name, gender, Category.DOG);
+    public Dog() {}
+
+    public Dog(String name, Gender gender, Double price) {
+        super(name, gender, Category.DOG, price);
         this.lastWalk = new Date();
     }
 
@@ -35,7 +38,10 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + ", €" + getPrice() + String.format(", last walk: %s", this.lastWalk);
+        return "Dog{" +
+                "lastWalk=" + lastWalk +
+                ", needsWalk=" + needsWalk +
+                '}';
     }
 
     @Override

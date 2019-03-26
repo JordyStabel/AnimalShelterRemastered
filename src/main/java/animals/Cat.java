@@ -7,8 +7,8 @@ public class Cat extends Animal {
 
     private String badHabits;
 
-    public Cat(String name, Gender gender, String badHabits) {
-        super(name, gender, Category.CAT);
+    public Cat(String name, Gender gender, String badHabits, Double price) {
+        super(name, gender, Category.CAT, price);
         this.badHabits = badHabits;
     }
 
@@ -29,6 +29,8 @@ public class Cat extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + ", €" + getPrice() + String.format(", bad habits %s", this.badHabits.toLowerCase());
+        return "Cat{" +
+                ", badHabits='" + badHabits + '\'' +
+                '}';
     }
 }

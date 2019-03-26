@@ -16,14 +16,14 @@ public class Reservation extends Observable{
         return animals;
     }
 
-    public void newCat(String name, Gender gender, String badHabits){
-        Cat cat = new Cat(name, gender, badHabits);
+    public void newCat(String name, Gender gender, String badHabits, Double price){
+        Cat cat = new Cat(name, gender, badHabits, price);
         this.animals.add(cat);
         notifyObservers(cat);
     }
 
-    public void newDog(String name, Gender gender){
-        Dog dog = new Dog(name, gender);
+    public void newDog(String name, Gender gender, Double price){
+        Dog dog = new Dog(name, gender, price);
         this.animals.add(dog);
         notifyObservers(dog);
     }
