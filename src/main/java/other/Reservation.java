@@ -1,8 +1,6 @@
 package other;
 
-import animals.Animal;
-import animals.Cat;
-import animals.Dog;
+import animals.*;
 import dal.repository.AnimalRepository;
 import enums.Gender;
 
