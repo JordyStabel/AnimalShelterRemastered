@@ -1,7 +1,6 @@
 package ui;
 
 import animals.Animal;
-import dal.repository.AnimalRepository;
 import enums.Category;
 import enums.Gender;
 import javafx.collections.ObservableList;
@@ -9,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import other.Reservation;
+import other.SaveStuffToDB;
 import shop.ISellable;
 import shop.Shop;
 
@@ -21,6 +21,7 @@ public class Controller implements Initializable {
 
     private Reservation reservations;
     private Shop shop;
+    private SaveStuffToDB saveStuffToDB;
 
     /**
      * ComboBoxes
@@ -65,7 +66,9 @@ public class Controller implements Initializable {
         category_CB.setItems(observableArrayList(Category.CAT, Category.DOG, Category.ITEM));
         reservations = new Reservation();
         shop = new Shop();
+        saveStuffToDB = new SaveStuffToDB();
         reservations.subscribe(shop);
+        reservations.subscribe(saveStuffToDB);
     }
 
     @FXML

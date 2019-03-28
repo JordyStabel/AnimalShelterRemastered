@@ -40,7 +40,7 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return "Dog{" +
+        return "Dog{" + super.toString() +
                 "lastWalk=" + lastWalk +
                 ", needsWalk=" + needsWalk +
                 '}';
