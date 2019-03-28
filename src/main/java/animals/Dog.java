@@ -3,10 +3,12 @@ package animals;
 import enums.Category;
 import enums.Gender;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.Date;
 
 @Entity
+@DiscriminatorValue("DOG")
 public class Dog extends Animal {
 
     private static int dogCount = 0;

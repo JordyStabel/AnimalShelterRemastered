@@ -34,11 +34,6 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>7.0.0.jre8</version>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.13</version>
-        </dependency>
 
         <!--START-->
         <!-- Needed for Hibernate, Java 11 no longer contains the correct Java EE APIs paths -->

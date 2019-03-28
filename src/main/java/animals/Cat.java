@@ -3,9 +3,16 @@ package animals;
 import enums.Category;
 import enums.Gender;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("CAT")
 public class Cat extends Animal {
 
     private String badHabits;
+
+    public Cat() {}
 
     public Cat(String name, Gender gender, String badHabits, Double price) {
         super(name, gender, Category.CAT, price);

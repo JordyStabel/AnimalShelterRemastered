@@ -1,6 +1,7 @@
 package ui;
 
 import animals.Animal;
+import dal.repository.AnimalRepository;
 import enums.Category;
 import enums.Gender;
 import javafx.collections.ObservableList;

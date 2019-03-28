@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Inheritance
+@DiscriminatorColumn(name="ANIMAL_TYPE")
 @Table(name = "Animals")
 public abstract class Animal implements ISellable {
 
